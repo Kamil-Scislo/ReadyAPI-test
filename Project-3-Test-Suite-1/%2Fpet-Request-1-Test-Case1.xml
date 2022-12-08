@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="1befb1b2-7bd8-49f1-a91c-cdf8d69b77d8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/pet-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1befb1b2-7bd8-49f1-a91c-cdf8d69b77d8fileName">%2Fpet-Request-1-Test-Case1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="PUT Request" id="8182827e-3686-4b92-9f74-0f9010eb0445">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet" methodName="updatePet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="PUT Request" id="4ac603d4-e84f-4034-a7e4-61db019860a8" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e8ae8d92-8aa1-4055-92f8-e49f94ce0315" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="657d1f38-aaf2-4315-8120-7cc8d761dd03" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="4514d3e2-abd1-4b02-b0ca-5d9caa31afd4" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

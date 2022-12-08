@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="69000031-84c1-4975-9aef-fe3d35137eda" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/pet/findByTags-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="69000031-84c1-4975-9aef-fe3d35137edafileName">%2Fpet%2FfindByTags-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GET Request" id="19562ab1-d170-411d-ba79-5d46faf0612f">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/findByTags" methodName="findPetsByTags" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="c75cd562-1347-4a3b-aa79-d5dced542676" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/findByTags</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="38c47796-cfed-4360-a771-c713d4ece9f7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="a2212231-d3ce-437d-8a9b-4a7ee006345d" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="a6f84417-a6ab-4aea-ba9f-7f08c9074c58" name="Response SLA">
+          <con:configuration>
+            <SLA>3000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="tags" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

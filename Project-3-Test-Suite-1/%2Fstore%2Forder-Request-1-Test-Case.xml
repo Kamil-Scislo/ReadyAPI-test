@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="97f27af8-d01a-4cef-87ee-12cc9fa1ea05" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/store/order-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="97f27af8-d01a-4cef-87ee-12cc9fa1ea05fileName">%2Fstore%2Forder-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="9233de5e-7430-48ad-b2a7-eaecc8d6d45e">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/store/order" methodName="placeOrder" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST Request" id="d7ab487d-1cc9-45b2-8c14-fda0a408890b" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{
+  "id" : 0,
+  "petId" : 0,
+  "quantity" : 0,
+  "shipDate" : "2015-07-20T15:49:04-07:00",
+  "status" : "placed",
+  "complete" : true
+}</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/store/order</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e2c7a5b4-2cb5-4965-bb73-aa14dd1eaca5" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="fadc6905-b66a-4065-a0ea-a6ba66a6cc3f" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="385d40cd-46c1-4cd5-8a50-a8127dd74854" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="cf8980b8-ee6e-4195-bdca-232fdf9578e2" name="JSONPath Match">
+          <con:configuration>
+            <path>$['id']</path>
+            <content>${POST Request#Response#$['id']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

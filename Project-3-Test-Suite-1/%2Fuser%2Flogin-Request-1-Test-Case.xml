@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="bc2c0d0c-c858-40af-bf85-b5227283f951" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/user/login-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bc2c0d0c-c858-40af-bf85-b5227283f951fileName">%2Fuser%2Flogin-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GET Request" id="135f2d4b-d6e8-48da-8342-e47bc7563160">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/user/login" methodName="loginUser" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="08ac9f76-872d-493b-b189-9079c06ad525" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/user/login</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="37bd0116-bda1-49b8-b5c6-3122b57e7c87" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="4b1301d6-84fb-4a79-ba56-b11efd75eadd" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9df42090-f925-4ef1-a578-d3b651658084" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Simple Contains" id="1bc728c2-292c-4b46-8859-22741b844f2b" name="Contains">
+          <con:configuration>
+            <token>${GET Request#Response#$['message']}</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="password" value="password"/>
+          <con:entry key="username" value="login"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="18cb6d10-21ae-4d43-9257-e8a925893f95" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/user/{username}-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="18cb6d10-21ae-4d43-9257-e8a925893f95fileName">%2Fuser%2F%7Busername%7D-Request-1-Test-Case2</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="DELETE Request" id="cbec4729-bfdf-40e6-8e25-6bcf4c71c9ff">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/user/{username}" methodName="deleteUser" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="DELETE Request" id="08f51499-6537-4e98-bc04-cd64c590aeea" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/user/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="69f0ab8b-2f91-459d-9dea-f734f3c369d7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="6655a459-1364-48e4-aad9-c707149d2b01" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6a0e9620-73cb-4186-8396-f5399365feba" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="username" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

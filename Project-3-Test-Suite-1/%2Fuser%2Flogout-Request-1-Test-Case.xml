@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="28d5ceaf-2c72-42b7-a243-608bf1b9d002" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/user/logout-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="28d5ceaf-2c72-42b7-a243-608bf1b9d002fileName">%2Fuser%2Flogout-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GET Request" id="3740b0bd-9a67-4285-bd75-b28d42ba7d05">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/user/logout" methodName="logoutUser" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="53de6f9b-57c2-4436-973b-69867140998a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/user/logout</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d6a269b7-bc3f-491a-b5c6-55813a5d5797" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="49e8d465-67a0-4bc7-99c7-db758fc701ab" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6d42f979-1ba0-490c-8d92-ef9f8e9d3aa2" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

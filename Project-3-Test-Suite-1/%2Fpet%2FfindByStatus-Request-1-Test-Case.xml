@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="4e6203ec-be1b-4a80-ae7a-8673775f41e6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/pet/findByStatus-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4e6203ec-be1b-4a80-ae7a-8673775f41e6fileName">%2Fpet%2FfindByStatus-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GET Request" id="ff870c83-4d87-4f3d-9506-4a937433d25b">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/findByStatus" methodName="findPetsByStatus" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="c266074d-4215-413e-9053-658d6fb07caa" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/findByStatus</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="359ba94e-ea2a-49e6-a687-ad4bce546331" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ccd687a3-1e68-4fc3-8c15-05f2e210b7c2" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="dfa85c6b-cd0a-4ffc-9d46-46e00de2d336" name="JSONPath Match">
+          <con:configuration>
+            <path>$[0]['name']</path>
+            <content>${GET Request#Response#$[0]['name']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0819672e-42ba-4771-82d3-2e49a5b6c466" name="Match content of [0]">
+          <con:configuration>
+            <path>$[0]</path>
+            <content>${GET Request#Response#$[0]}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="status" value="available"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

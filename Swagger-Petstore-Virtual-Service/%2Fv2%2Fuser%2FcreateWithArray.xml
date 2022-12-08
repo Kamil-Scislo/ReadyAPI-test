@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/v2/user/createWithArray" method="POST" resourcePath="/v2/user/createWithArray" id="dfdbba0d-a6ba-4afd-aafb-12a0250dcadd" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="dfdbba0d-a6ba-4afd-aafb-12a0250dcaddfileName">%2Fv2%2Fuser%2FcreateWithArray</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 1" id="bdad7a53-cfdc-4ca5-9f25-0f26f68322c7" httpResponseStatus="200" mediaType="application/json">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Response 2" id="9aa49e77-f777-4833-8af0-f387e33cac06" httpResponseStatus="200" mediaType="application/xml">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+</con:restMockAction>

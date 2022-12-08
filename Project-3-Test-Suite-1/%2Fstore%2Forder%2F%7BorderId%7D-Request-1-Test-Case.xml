@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f0316772-b26a-4774-b7ee-094c7c0c66a2" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/store/order/{orderId}-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f0316772-b26a-4774-b7ee-094c7c0c66a2fileName">%2Fstore%2Forder%2F%7BorderId%7D-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GET Request" id="ac5211a3-7186-4fb7-9c47-f8e6c6cbf08a">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/store/order/{orderId}" methodName="getOrderById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="0ce73d39-f49d-41f7-84ef-6cd66cf91b2c" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/store/order/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="49a3fa7c-cbf8-46ac-bfe4-e2224b715dd7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="fe1180b5-b6ff-4686-84fa-6d7106501c16" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="a17d737b-12d8-4b92-aa94-3afba7e92e50" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="orderId" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

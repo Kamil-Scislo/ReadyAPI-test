@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="068e6758-cbe8-47d2-a986-583cea39aee5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/pet-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="068e6758-cbe8-47d2-a986-583cea39aee5fileName">%2Fpet-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="b257004f-2226-4605-99f2-7fe03767cdc0">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet" methodName="addPet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST Request" id="6928f259-6dfd-43e9-a3bf-ca8ea1c4d98d" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri>
+        <con:assertion type="SwaggerComplianceAssertion" id="bfea08f1-9a81-42e6-b771-bad1fefb0039" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="AssertionGroup" id="8b4cf96b-3d4a-48f7-912a-b364c51be9a0" name="Default assertions">
+          <con:configuration xsi:type="con:AssertionGroup">
+            <con:selectedAssertions type="Valid HTTP Status Codes" id="a3fc9ce5-c302-41f1-a56d-b2384bd97295" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:selectedAssertions>
+            <con:selectedAssertions type="Response SLA Assertion" name="Response SLA" id="1926e387-6cee-42bc-bb75-2a7c9599f753">
+              <con:configuration>
+                <SLA>200</SLA>
+              </con:configuration>
+            </con:selectedAssertions>
+            <con:groupLogic>AND</con:groupLogic>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>b257004f-2226-4605-99f2-7fe03767cdc0</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="4684f18b-fb74-489b-83a1-829ff1c8b83d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/pet/{petId}/uploadImage-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="4684f18b-fb74-489b-83a1-829ff1c8b83dfileName">%2Fpet%2F%7BpetId%7D%2FuploadImage-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="f2963c22-0eab-49ad-bb98-3b9d80ba7dbb">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/{petId}/uploadImage" methodName="uploadFile" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST Request" id="ab479eb9-2c6e-41c9-b52f-956d3dbd4608" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/uploadImage</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a1476c4f-10d4-4bbe-b823-871e63bc9ef9" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="98349e23-cc69-4a64-b986-9b0739bf3bb2" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="e21516cb-f9a8-41cf-bce5-b3eb05f068ff" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="petId" value=""/>
+          <con:entry key="file" value=""/>
+          <con:entry key="additionalMetadata" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="388192c9-551b-4b14-b4c6-dab97b2a0302" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/user/createWithArray-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="388192c9-551b-4b14-b4c6-dab97b2a0302fileName">%2Fuser%2FcreateWithArray-Request-1-Test-Case</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="fba2b181-fb65-479f-a51c-63ab3433514a">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/user/createWithArray" methodName="createUsersWithArrayInput" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST Request" id="4281f700-c74a-414c-9d63-3883ba4a7e7a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{ }</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/user/createWithArray</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="dc01931c-86e9-4a99-a14a-9131b4f9ef66" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="cea434a1-6180-4017-b0a7-1d51d92b84c0" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="3abb0518-3f28-4e20-99cc-0cb1fd3ceb8f" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

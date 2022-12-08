@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/v2/user" method="POST" resourcePath="/v2/user" id="44167dd0-32df-4de7-9b80-6ad980429065" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="44167dd0-32df-4de7-9b80-6ad980429065fileName">%2Fv2%2Fuser</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 1" id="e47680b5-098d-4c65-9fe9-c4cfae027a58" httpResponseStatus="200" mediaType="application/json">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+  <con:response name="Response 2" id="8b3c6879-0458-46cd-8849-09270b52e064" httpResponseStatus="200" mediaType="application/xml">
+    <con:settings/>
+    <con:responseContent/>
+  </con:response>
+</con:restMockAction>

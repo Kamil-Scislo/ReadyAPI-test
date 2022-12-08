@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c438a713-d5cc-426e-bab5-251a6ca0b294" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/pet/{petId}-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c438a713-d5cc-426e-bab5-251a6ca0b294fileName">%2Fpet%2F%7BpetId%7D-Request-1-Test-Case1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="POST Request" id="b04e7c5c-4c8a-4ff6-b8c8-9dbe10f2f3bd">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/pet/{petId}" methodName="updatePetWithForm" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST Request" id="4cfc1528-c8eb-4b62-a85f-16318272994a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://petstore.swagger.io/v2/pet/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f2d73384-6254-4138-848a-04576be1d7e1" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="a430c0cd-30ab-4ece-86ff-28f4d81e47cc" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="fcbc8157-0c34-4a12-9ae3-5e3a594cc648" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="petId" value=""/>
+          <con:entry key="name" value=""/>
+          <con:entry key="status" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b4642172-89f6-4f6d-9c8a-7376104f3d62" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/user/{username}-Request 1 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b4642172-89f6-4f6d-9c8a-7376104f3d62fileName">%2Fuser%2F%7Busername%7D-Request-1-Test-Case1</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="PUT Request" id="d4ba7b65-e388-4c5a-a942-203d8a633df7">
+    <con:settings/>
+    <con:config service="Swagger Petstore" resourcePath="/v2/user/{username}" methodName="updateUser" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="PUT Request" id="c34a4ca9-2e9d-4874-b39f-e48081df961f" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>http://petstore.swagger.io</con:endpoint>
+        <con:request>{
+  "id" : 0,
+  "username" : "string",
+  "firstName" : "string",
+  "lastName" : "string",
+  "email" : "string",
+  "password" : "string",
+  "phone" : "string",
+  "userStatus" : 0
+}</con:request>
+        <con:originalUri>https://petstore.swagger.io/v2/user/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="cf5cda60-d556-45fd-8c74-f64604d5a113" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="SwaggerComplianceAssertion" id="023d2c24-095f-4a72-9439-40302c495b94" name="Swagger Compliance Assertion">
+          <con:configuration>
+            <swaggerUrl>https://petstore.swagger.io/v2/swagger.json</swaggerUrl>
+            <strictMode>true</strictMode>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="1f2c9e85-19df-43b1-b31d-ff67bd1cc83b" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="username" value=""/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

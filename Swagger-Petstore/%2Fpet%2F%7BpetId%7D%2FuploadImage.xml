@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/pet/{petId}/uploadImage" path="/pet/{petId}/uploadImage" id="05d9a278-0c31-4969-93fa-e60982dafa4a" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="05d9a278-0c31-4969-93fa-e60982dafa4afileName">%2Fpet%2F%7BpetId%7D%2FuploadImage</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>petId</con:name>
+      <con:value/>
+      <con:style>TEMPLATE</con:style>
+      <con:dataType>integer</con:dataType>
+      <con:default/>
+      <con:description>ID of pet to update</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="uploadFile" id="60f79545-7774-41e9-9723-75c1d52a1718" method="POST">
+    <con:description>uploads an image</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>additionalMetadata</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:description>Additional data to pass to server</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>file</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+        <con:description>file to upload</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 0,
+  "type" : "string",
+  "message" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>multipart/form-data</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="ab479eb9-2c6e-41c9-b52f-956d3dbd4608" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://petstore.swagger.io</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="additionalMetadata" value=""/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>
